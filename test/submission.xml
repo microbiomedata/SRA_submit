@@ -1,0 +1,162 @@
+<?xml version="1.0" ?>
+<Submission>
+    <Description>
+        <Comment>NMDC Submission for nmdc:sty-11-hht5sb92</Comment>
+        <Submitter user_name="Chienchi Lo"/>
+        <Organization role="owner" type="center">
+            <Name>National Microbiome Data Collaborative</Name>
+            <Contact email="chienchi@lanl.gov">
+                <Name>
+                    <First>Chienchi</First>
+                    <Last>Lo</Last>
+                </Name>
+            </Contact>
+        </Organization>
+        <Hold release_date="2024-06-20"/>
+    </Description>
+    <Action>
+        <AddData target_db="BioSample">
+            <Data content_type="XML">
+                <XmlContent>
+                    <BioSample schema_version="2.0">
+                        <SampleId>
+                            <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-gnfpt4833</SPUID>
+                        </SampleId>
+                        <Descriptor>
+                            <Title>NMDC Biosample nmdc:bsm-12-gnfpt4833 from surface water micro organisms part of nmdc:sty-11-hht5sb92 study</Title>
+                        </Descriptor>
+                        <Organism>
+                            <OrganismName>aquatic metagenome</OrganismName>
+                        </Organism>
+                        <BioProject>
+                            <PrimaryId db="BioProject">PRJNA406977</PrimaryId>
+                        </BioProject>
+                        <Package>MIMS.me.water.6.0</Package>
+                        <Attributes>
+                            <Attribute attribute_name="collection_date">2014-08-05T18:40Z</Attribute>
+                            <Attribute attribute_name="conduc">567 uS/cm</Attribute>
+                            <Attribute attribute_name="depth">0.1 m</Attribute>
+                            <Attribute attribute_name="elev">1178.70</Attribute>
+                            <Attribute attribute_name="env_broad_scale">freshwater stream biome [ENVO:03605008]</Attribute>
+                            <Attribute attribute_name="env_local_scale">freshwater stream [ENVO:03605007]</Attribute>
+                            <Attribute attribute_name="env_medium">stream water [ENVO:03605006]</Attribute>
+                            <Attribute attribute_name="env_package">water</Attribute>
+                            <Attribute attribute_name="geo_loc_name">USA: Colorado, Arikaree River</Attribute>
+                            <Attribute attribute_name="lat_lon">39.758359 N 102.448595 W</Attribute>
+                            <Attribute attribute_name="samp_collect_device">Grab</Attribute>
+                            <Attribute attribute_name="sample_name">ARIK.SS.20140805</Attribute>
+                            <Attribute attribute_name="temp">20.1 Cel</Attribute>
+                        </Attributes>
+                    </BioSample>
+                </XmlContent>
+            </Data>
+            <Identifier>
+                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-gnfpt4833</SPUID>
+            </Identifier>
+        </AddData>
+    </Action>
+    <Action>
+        <AddData target_db="BioSample">
+            <Data content_type="XML">
+                <XmlContent>
+                    <BioSample schema_version="2.0">
+                        <SampleId>
+                            <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-kwnkx8977</SPUID>
+                        </SampleId>
+                        <Descriptor>
+                            <Title>NMDC Biosample nmdc:bsm-12-kwnkx8977 from surface water micro organisms part of nmdc:sty-11-hht5sb92 study</Title>
+                        </Descriptor>
+                        <Organism>
+                            <OrganismName>aquatic metagenome</OrganismName>
+                        </Organism>
+                        <BioProject>
+                            <PrimaryId db="BioProject">PRJNA406977</PrimaryId>
+                        </BioProject>
+                        <Package>MIMS.me.water.6.0</Package>
+                        <Attributes>
+                            <Attribute attribute_name="collection_date">2014-09-02T18:00Z</Attribute>
+                            <Attribute attribute_name="depth">0.1 m</Attribute>
+                            <Attribute attribute_name="elev">1178.70</Attribute>
+                            <Attribute attribute_name="env_broad_scale">freshwater stream biome [ENVO:03605008]</Attribute>
+                            <Attribute attribute_name="env_local_scale">freshwater stream [ENVO:03605007]</Attribute>
+                            <Attribute attribute_name="env_medium">stream water [ENVO:03605006]</Attribute>
+                            <Attribute attribute_name="env_package">water</Attribute>
+                            <Attribute attribute_name="geo_loc_name">USA: Colorado, Arikaree River</Attribute>
+                            <Attribute attribute_name="lat_lon">39.758359 N 102.448595 W</Attribute>
+                            <Attribute attribute_name="samp_collect_device">Grab</Attribute>
+                            <Attribute attribute_name="samp_size">1250 mL</Attribute>
+                            <Attribute attribute_name="sample_name">ARIK.SS.20140902</Attribute>
+                        </Attributes>
+                    </BioSample>
+                </XmlContent>
+            </Data>
+            <Identifier>
+                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-kwnkx8977</SPUID>
+            </Identifier>
+        </AddData>
+    </Action>
+    <Action>
+        <AddFiles target_db="SRA">
+            <File file_path="SRA_submit/test.1.fastq.gz">
+                <DataType>generic-data</DataType>
+            </File>
+            <File file_path="SRA_submit/test.2.fastq.gz">
+                <DataType>generic-data</DataType>
+            </File>
+            <Attribute name="library_strategy">AMPLICON</Attribute>
+            <Attribute name="library_source">METAGENOMIC</Attribute>
+            <Attribute name="library_selection">PCR</Attribute>
+            <Attribute name="library_layout">paired</Attribute>
+            <Attribute name="platform">ILLUMINA</Attribute>
+            <Attribute name="instrument_model">Illumina MiSeq</Attribute>
+            <Attribute name="design_description">Artic_V3</Attribute>
+            <Attribute name="library_name">test1.fastq.gz.2020016073</Attribute>
+            <AttributeRefId name="BioProject">
+                <RefId>
+                    <PrimaryId db="BioProject">PRJNA406977</PrimaryId>
+                </RefId>
+            </AttributeRefId>
+            <AttributeRefId name="BioSample">
+                <RefId>
+                    <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-gnfpt4833</SPUID>
+                </RefId>
+            </AttributeRefId>
+            <Identifier>
+                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">test1.fastq.gzbsm-12-gnfpt4833</SPUID>
+            </Identifier>
+        </AddFiles>
+    </Action>
+    <Action>
+        <AddFiles target_db="SRA">
+            <File file_path="SRA_submit/test2.1.fastq.gz">
+                <DataType>generic-data</DataType>
+            </File>
+            <File file_path="SRA_submit/test2.2.fastq.gz">
+                <DataType>generic-data</DataType>
+            </File>
+            <Attribute name="library_strategy">AMPLICON</Attribute>
+            <Attribute name="library_source">METAGENOMIC</Attribute>
+            <Attribute name="library_selection">PCR</Attribute>
+            <Attribute name="library_layout">paired</Attribute>
+            <Attribute name="platform">ILLUMINA</Attribute>
+            <Attribute name="instrument_model">Illumina MiSeq</Attribute>
+            <Attribute name="design_description">Artic_V3</Attribute>
+            <Attribute name="library_name">test2.fastq.gz.2020016073</Attribute>
+            <AttributeRefId name="BioProject">
+                <RefId>
+                    <PrimaryId db="BioProject">PRJNA406977</PrimaryId>
+                </RefId>
+            </AttributeRefId>
+            <AttributeRefId name="BioSample">
+                <RefId>
+                    <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-kwnkx8977</SPUID>
+                </RefId>
+            </AttributeRefId>
+            <Identifier>
+                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">test2.fastq.gz-nmdc:bsm-12-kwnkx8977</SPUID>
+            </Identifier>
+        </AddFiles>
+    </Action>
+    
+</Submission>
+

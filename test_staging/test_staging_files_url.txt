@@ -1,0 +1,4 @@
+https://portal.nersc.gov/project/m3408/test_data/SRA_submit/test.1.fastq.gz
+https://portal.nersc.gov/project/m3408/test_data/SRA_submit/test.2.fastq.gz
+https://portal.nersc.gov/project/m3408/test_data/SRA_submit/test2.1.fastq.gz
+https://portal.nersc.gov/project/m3408/test_data/SRA_submit/test2.2.fastq.gz
