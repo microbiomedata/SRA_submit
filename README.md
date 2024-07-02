@@ -7,7 +7,7 @@ submission, you should contact [SRA support](mailto:sra@ncbi.nlm.nih.gov).
 
 Submission to SRA requires a submission xml file and fastq files. The required XML file for submission will be provided by NMDC 
 runtime. The Python scripts here will help validating the xml file, staging the FASTQ files, uploading the NCBI server and monitoring 
-the submission status. Scripts are adapting from [Metagenote](https://github.com/niaid/metagenote/tree/master/sra_submission). 
+the submission status. Scripts are adapted from [Metagenote](https://github.com/niaid/metagenote/tree/master/sra_submission). 
 
 The `sra_xml_validation.py` will validate the submission.xml through by NCBI biosample validate service.
 
@@ -85,7 +85,7 @@ sra_ascp.py --ncbi-sra-dir 'submit/Test/' --input-dir 'test/'  --ncbi-username '
 ```
 
 **Note**: Do not run this command unless you have collected all required files for your project. The input folder should
-contain only the files required (example: `submission.xml`, `NM2020016073_R1.fastq.gz` and `NM2020016073_R2.fastq.gzz`, please remove `*.txt` file and `validate.xml`) by SRA for a submission. 
+contain only the files required (example: `submission.xml`, `test.1.fastq.gz`, `test.1.fastq.gz` `test2.1.fastq.gz` and `test2.2.fastq.gz`, please remove `*.txt` file and `validate.xml`) by SRA for a submission. 
 
 This script will run `ascp` to transfer all the files to SRA. You should make sure that `ascp` has been successfully
 installed on the system. Otherwise, the command will fail. NCBI has chosen to use a product from
@@ -148,7 +148,7 @@ private SSH key, individual users should contact [SRA](mailto:sra@ncbi.nlm.nih.g
 
 You should receive email notification about the submission from NCBI. 
 
-If your submission contain errors, the email informing you about the error and which should be similar to 
+If your submission contain errors, the email informing you about the error which should be similar to 
 `sra_ascp_result_monitor.py` command report above.  You should wait for notification from the SRA that the submission has been
 received and processed. During error correction, only make changes to SRA detected errors. All other changes will be ignored
 by the SRA during resubmission. If additional changes are required, they can be made using the NCBI website after successful
