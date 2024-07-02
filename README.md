@@ -148,7 +148,7 @@ private SSH key, individual users should contact [SRA](mailto:sra@ncbi.nlm.nih.g
 
 You should receive email notification about the submission from NCBI. 
 
-If your submission contain errors, the email informing you about the error which should be similar to 
+If your submission contain errors, the email will inform you about the error which should be similar to 
 `sra_ascp_result_monitor.py` command report above.  You should wait for notification from the SRA that the submission has been
 received and processed. During error correction, only make changes to SRA detected errors. All other changes will be ignored
 by the SRA during resubmission. If additional changes are required, they can be made using the NCBI website after successful
