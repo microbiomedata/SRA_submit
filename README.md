@@ -5,8 +5,8 @@ contain any sensitive information. File names as submitted will appear publicly 
 files for a submission must be uploaded into a single folder. If you have any question or concern about your data or
 submission, you should contact [SRA support](mailto:sra@ncbi.nlm.nih.gov).
 
-Submission to SRA requires a submission xml file and fastq files. The required XML file for submission will be provided by NMDC 
-runtime. The Python scripts here will help validating the xml file, staging the FASTQ files, uploading files to the NCBI server 
+Submission to SRA requires a submission xml file and fastq files. The required XML file for submission will be provided by [NMDC 
+runtime](https://github.com/microbiomedata/nmdc-runtime). The Python scripts here will help validating the xml file, staging the FASTQ files, uploading files to the NCBI server 
 and monitoring the submission status. Scripts are adapted from [METAGENOTE](https://github.com/niaid/metagenote/tree/master/sra_submission). 
 
 The `sra_xml_validation.py` will validate the submission.xml through by NCBI biosample validate service.
