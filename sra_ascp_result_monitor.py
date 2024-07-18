@@ -38,13 +38,16 @@ def check_report(report, db_acc):
                             if msg:
                                 for m in msg:
                                     logging.info("%s %s %s" % (act.getAttributeNode("target_db").value, act.getAttributeNode("status").value, m.firstChild.nodeValue ))
+                            else:
+                                logging.info("%s %s" % (act.getAttributeNode("target_db").value, act.getAttributeNode("status").value))
                             return False, db_acc
                         else:
                             objs=act.getElementsByTagName("Object")
                             for o in objs:
                                 if o.getAttributeNode("accession"):
-                                    logging.info("%s %s %s" %  (o.getAttributeNode("target_db").value, o.getAttributeNode("spuid").value, o.getAttributeNode("accession").value))
-                                    db_acc[o.getAttributeNode("spuid").value][ o.getAttributeNode("target_db").value] = o.getAttributeNode("accession").value
+                                    if db_acc[o.getAttributeNode("spuid").value][ o.getAttributeNode("target_db").value] != o.getAttributeNode("accession").value:
+                                        logging.info("%s %s %s" %  (o.getAttributeNode("target_db").value, o.getAttributeNode("spuid").value, o.getAttributeNode("accession").value))
+                                        db_acc[o.getAttributeNode("spuid").value][ o.getAttributeNode("target_db").value] = o.getAttributeNode("accession").value
                                 else:
                                     logging.info("%s %s" %  (o.getAttributeNode("target_db").value, o.getAttributeNode("spuid").value))
                                     return False, db_acc
