@@ -20,7 +20,7 @@
                 <XmlContent>
                     <BioSample schema_version="2.0">
                         <SampleId>
-                            <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-gnfpt4834</SPUID>
+                            <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-gnfpt4835</SPUID>
                         </SampleId>
                         <Descriptor>
                             <Title>NMDC Biosample nmdc:bsm-12-gnfpt4833 from surface water micro organisms part of nmdc:sty-11-hht5sb92 study</Title>
@@ -51,7 +51,7 @@
                 </XmlContent>
             </Data>
             <Identifier>
-                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-gnfpt4834</SPUID>
+                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-gnfpt4835</SPUID>
             </Identifier>
         </AddData>
     </Action>
@@ -61,7 +61,7 @@
                 <XmlContent>
                     <BioSample schema_version="2.0">
                         <SampleId>
-                            <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-kwnkx8978</SPUID>
+                            <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-kwnkx8979</SPUID>
                         </SampleId>
                         <Descriptor>
                             <Title>NMDC Biosample nmdc:bsm-12-kwnkx8977 from surface water micro organisms part of nmdc:sty-11-hht5sb92 study</Title>
@@ -91,7 +91,7 @@
                 </XmlContent>
             </Data>
             <Identifier>
-                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-kwnkx8978</SPUID>
+                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-kwnkx8979</SPUID>
             </Identifier>
         </AddData>
     </Action>
@@ -118,11 +118,11 @@
             </AttributeRefId>
             <AttributeRefId name="BioSample">
                 <RefId>
-                    <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-gnfpt4834</SPUID>
+                    <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-gnfpt4835</SPUID>
                 </RefId>
             </AttributeRefId>
             <Identifier>
-                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">test1.fastq.gzbsm-12-gnfpt4834</SPUID>
+                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">test1.fastq.gzbsm-12-gnfpt4835</SPUID>
             </Identifier>
         </AddFiles>
     </Action>
@@ -149,11 +149,11 @@
             </AttributeRefId>
             <AttributeRefId name="BioSample">
                 <RefId>
-                    <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-kwnkx8978</SPUID>
+                    <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">nmdc:bsm-12-kwnkx8979</SPUID>
                 </RefId>
             </AttributeRefId>
             <Identifier>
-                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">test2.fastq.gz-nmdc:bsm-12-kwnkx8978</SPUID>
+                <SPUID spuid_namespace="Lawrence Berkeley National Laboratory">test2.fastq.gz-nmdc:bsm-12-kwnkx8979</SPUID>
             </Identifier>
         </AddFiles>
     </Action>
