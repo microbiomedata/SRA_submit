@@ -32,8 +32,8 @@ def main(argvs):
             url=line.strip()
             if url.startswith("http:/") or url.startswith("https:/"):
                 file_name = os.path.basename(url)
-                dir_name = os.path.basename(os.path.dirname(url))
-                outdir_name = os.path.join(argvs.output_dir,dir_name)
+                #dir_name = os.path.basename(os.path.dirname(url))
+                outdir_name = argvs.output_dir
                 logging.info(f"Downloading file {file_name} to {outdir_name}")
                 os.makedirs(outdir_name,exist_ok=True)
                 out_filename=os.path.join(outdir_name,file_name)

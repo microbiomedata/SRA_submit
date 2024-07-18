@@ -97,10 +97,10 @@
     </Action>
     <Action>
         <AddFiles target_db="SRA">
-            <File file_path="SRA_submit/test.1.fastq.gz">
+            <File file_path="test.1.fastq.gz">
                 <DataType>generic-data</DataType>
             </File>
-            <File file_path="SRA_submit/test.2.fastq.gz">
+            <File file_path="test.2.fastq.gz">
                 <DataType>generic-data</DataType>
             </File>
             <Attribute name="library_strategy">AMPLICON</Attribute>
@@ -128,10 +128,10 @@
     </Action>
     <Action>
         <AddFiles target_db="SRA">
-            <File file_path="SRA_submit/test2.1.fastq.gz">
+            <File file_path="test2.1.fastq.gz">
                 <DataType>generic-data</DataType>
             </File>
-            <File file_path="SRA_submit/test2.2.fastq.gz">
+            <File file_path="test2.2.fastq.gz">
                 <DataType>generic-data</DataType>
             </File>
             <Attribute name="library_strategy">AMPLICON</Attribute>
