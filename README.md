@@ -64,10 +64,10 @@ The folder `test_staging` contains an example url text file `test_staging_files_
 The command will have log info print on the screen as following. The fastq files should be downloaed to the staging folder `test`.
 
 ```
-[2024-07-02 15:15] INFO: Downloading file test.1.fastq.gz to test/SRA_submit
-[2024-07-02 15:15] INFO: Downloading file test.2.fastq.gz to test/SRA_submit
-[2024-07-02 15:15] INFO: Downloading file test2.1.fastq.gz to test/SRA_submit
-[2024-07-02 15:15] INFO: Downloading file test2.2.fastq.gz to test/SRA_submit
+[2024-07-02 15:15] INFO: Downloading file test.1.fastq.gz to test/
+[2024-07-02 15:15] INFO: Downloading file test.2.fastq.gz to test/
+[2024-07-02 15:15] INFO: Downloading file test2.1.fastq.gz to test/
+[2024-07-02 15:15] INFO: Downloading file test2.2.fastq.gz to test/
 ```
 
 The following is the description of the arguments and its default value.
