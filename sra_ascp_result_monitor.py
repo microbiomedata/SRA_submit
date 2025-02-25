@@ -25,10 +25,18 @@ def check_report(report, db_acc):
     if submission:
         for sub in submission:
             if "processed-error" in sub.getAttributeNode("status").value or "failed" in sub.getAttributeNode("status").value:
-                msg = sub.getElementsByTagName("Message")
-                if msg:
-                    for m in msg:
-                        logging.error(m.firstChild.nodeValue)
+                if actions:
+                    for act in actions:
+                        if "processed-ok" not in act.getAttributeNode("status").value:
+                            msg = act.getElementsByTagName("Message")
+                            if msg:
+                                for m in msg:
+                                    logging.error(m.firstChild.nodeValue)
+                else:
+                    msg = sub.getElementsByTagName("Message")
+                    if msg:
+                        for m in msg:
+                            logging.error(m.firstChild.nodeValue)
                 sys.exit(1)
             else:
                 if actions:
