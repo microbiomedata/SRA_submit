@@ -41,10 +41,10 @@ If the command completes successfully, you should see the message similar to the
 files, `validate.xml` which shows the validation results.
 
 ```
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  7427    0   653  100  6774   5062  52511 --:--:-- --:--:-- --:--:-- 57573
-{"Passed": "Yes"}
+Validating Biosample block 1 (SampleId: nmdc:bsm-12-gnfpt4835)...
+{
+  "Passed": "Yes"
+}
 ```
 
 The following is the description of the arguments and its default value.
