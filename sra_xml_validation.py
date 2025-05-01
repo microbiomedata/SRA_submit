@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-
 __email__ = "chienchi@lanl.gov"
 __author__ = "Chienchi Lo"
-__version__ = "1.0"
+__version__ = "2.0"
 __update__ = "07/02/2024"
 __project__ = "National Microbiome Data Collaborative"
 
@@ -13,34 +12,76 @@ import argparse
 import subprocess
 import logging
 import xml.etree.ElementTree as ET
+import time
 
-def ValidateLog(f):
-    """ output the validate.xml content to logfile """
+def ValidateLog(xml_file):
+    """Parse and display the validation result from NCBI"""
+    try:
+        t = ET.ElementTree(file=xml_file).getroot()
+    except ET.ParseError as e:
+        print(f"⚠️ Failed to parse XML response: {e}")
+        with open(xml_file, 'r') as f:
+            print("Raw response content:")
+            print(f.read())
+        return None
+
     msg = {}
-    t = (ET.ElementTree(file = f)).getroot()
-    """
-    with open(f, "w") as fl:
-        fl.write("message: %s\n" % t.find("Action/Response/Message").text)
-        fl.write("sample_id: %s\n" % t.find("Action/Response/Object").attrib["spuid"])
-    """
+    status = t.find("Action").attrib.get("status", "unknown")
     s = {"processed-error": "No", "failed": "No", "processed-ok": "Yes", "submitted": "No", "processing": "No"}
-    msg["Passed"] = s[t.find("Action").attrib["status"]]
+    msg["Passed"] = s.get(status, "Unknown")
     if t.find("Action/Response/Message") is not None:
         msg["Report Text"] = t.find("Action/Response/Message").text
-    print(json.dumps(msg))
-    return(0 if msg["Passed"] == "Yes" else 1)
+    print(json.dumps(msg, indent=2))
+    return t
+
+def extract_sample_id(adddata_element):
+    """Extract sample ID from <SampleId>/<SPUID>"""
+    spuid_elem = adddata_element.find(".//SampleId/SPUID")
+    if spuid_elem is not None and spuid_elem.text:
+        return spuid_elem.text.strip()
+    return "Unknown_Sample"
+
+def validate_each_adddata(input_file, final_output_path):
+    tree = ET.parse(input_file)
+    root = tree.getroot()
+    ncbi_validate_service_api = "https://www.ncbi.nlm.nih.gov/projects/biosample/validate/"
+
+    combined_root = ET.Element("ValidationResponses")
+
+    for idx, adddata in enumerate(root.findall(".//AddData"), 1):
+        sample_id = extract_sample_id(adddata)
+        print(f"Validating Biosample block {idx} (SampleId: {sample_id})...")
+
+        # Write the AddData block to a temp file
+        temp_file = f"temp_block_{idx}.xml"
+        ET.ElementTree(adddata).write(temp_file)
+
+        # Call the validation API
+        response_file = f"temp_response_{idx}.xml"
+        with open(response_file, "w") as rp:
+            subprocess.call(["curl", "-s", "-X", "POST", "-d", f"@{temp_file}", ncbi_validate_service_api], stdout=rp)
+
+        # Parse the response and append it to the combined output
+        response_root = ValidateLog(response_file)
+        if response_root is not None:
+            combined_root.append(response_root)
+
+        # Clean up temporary files
+        os.remove(temp_file)
+        os.remove(response_file)
+        time.sleep(1)
+
+    # Write combined response XML
+    combined_tree = ET.ElementTree(combined_root)
+    combined_tree.write(final_output_path)
+    print(f"✅ All validation responses saved to: {final_output_path}")
+
 
 def main(argvs):
-
-    validate_xml = argvs.output_xml
     submission_xml = argvs.input_file
-    ncbi_validate_service_api = "https://www.ncbi.nlm.nih.gov/projects/biosample/validate/" 
-    logging.info("Validate %s by NCBI" % submission_xml)
-    with open(validate_xml, "w") as rp:
-        subprocess.call(["curl", "-X", "POST", "-d", "@%s" % submission_xml, 
-                         ncbi_validate_service_api], stdout = rp)
+    validate_xml = argvs.output_xml
+    validate_each_adddata(submission_xml,validate_xml)
 
-    return(ValidateLog(validate_xml))
 
 if __name__ == '__main__':
     toolname = os.path.basename(__file__)
