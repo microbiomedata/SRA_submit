@@ -107,7 +107,7 @@ private SSH key, individual users should contact [SRA](mailto:sra@ncbi.nlm.nih.g
 After submission, you can check the status, run the command:
 
 ```
-sra_ascp_result_monitor.py --input-dir test -d submit/Test --ncbi-username 'username' --ncbi-private-key 'keyfile'
+sra_ascp_result_monitor.py --input-dir test/ -d submit/Test/ --ncbi-username 'username' --ncbi-private-key 'keyfile'
 
 ```
 
