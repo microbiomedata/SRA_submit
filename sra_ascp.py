@@ -32,8 +32,9 @@ def main(argv):
 
     # send the submit.ready file to SRA
     input_dir_name = os.path.basename(os.path.normpath(argv.input_dir))
-    dst_input_dir = "%s%s" % (dst_dir, input_dir_name)
-    cmd = "ascp -i %s -v -T %s %s " % (argv.private_key, ready_file, dst_input_dir)
+    dst_input_dir = "%s/%s" % (dst_dir, input_dir_name)
+    cmd = "ascp -i %s -v -T %s %s " % (argv.private_key, ready_file , dst_input_dir)
+    print(cmd)
     if os.system(cmd) != 0:
         print("Failed to upload %s to NCBI" % ready_file)
         return(False)
