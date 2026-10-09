@@ -102,9 +102,9 @@ def main(argv):
         time.sleep(10) # check every 10 sec.
 
     ## after successfully submission and return valid db_acc, push to mongo db
-    ## NMDC class OmicsProcessing slot insdc_bioproject_identifiers in the format bioproject:$accession. 
+    ## NMDC class NucleotideSequencing slot insdc_bioproject_identifiers in the format bioproject:$accession. 
     ## NMDC class Biosample       slot insdc_biosample_identifiers  in the format biosample:$accession.
-    ## NMDC class OmicsProcessing slot insdc_experiment_identifiers in the format insdc.sra:$accession.
+    ## NMDC class NucleotideSequencing slot insdc_experiment_identifiers in the format insdc.sra:$accession.
     if (success_bool and len(db_acc) > 0 ):
         logging.info("Successfully Submit %s to NCBI" % argv.input_dir)
         #update_sample_to_mongo(db_acc)
